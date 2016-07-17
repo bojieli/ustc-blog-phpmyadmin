@@ -1485,6 +1485,12 @@ class PMA_DatabaseInterface
                 $default_charset = 'utf8';
                 $default_collation = 'utf8_general_ci';
             }
+
+            /* BEGIN USTC blog specific charset */
+            $default_charset = 'latin1';
+            $default_collation = 'latin1_swedish_ci';
+            /* END USTC blog specific charset */
+
             if (! empty($GLOBALS['collation_connection'])) {
                 $this->query(
                     "SET CHARACTER SET '$default_charset';",
